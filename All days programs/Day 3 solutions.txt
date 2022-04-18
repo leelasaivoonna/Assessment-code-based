@@ -1,0 +1,174 @@
+1)dic1={1:10, 2:20}
+dic2={3:30, 4:40}
+dic3={5:50,6:60}
+
+dic4={**dic1,**dic2,**dic3}
+
+print(dic4)
+
+
+2.Write a Python script to check whether a given key already exists in a dictionary
+dic1={"name":"leelaah","age":22,"course":"python"}
+n=input("enter the key:")
+
+if n in dic1:
+    print("element exists")
+    
+else:
+    print("no required element")
+
+    
+
+
+3. Write a Python program to iterate over dictionaries using for loops.
+
+dic={"name":"leelaah","age":22,"course":"python"}
+
+for i,j in dic.items():
+     for k in range(0,len(dic)+1):
+         dic[i]=None
+
+print(dic)
+
+
+
+
+4. Write a Python script to generate and print a dictionary that contains a number (between 1 and n) in the form (x, x*x). 
+n=int(input("enter the max number :"))
+lst=[]
+dict1={}
+for i in range(1,n+1):
+    lst.append(i)
+for k in range(len(lst)):
+    dict1.setdefault(lst[k],lst[k]**2)
+print(dict1)
+----------------------------------------------------
+d={x:x**2 for x in range(1,20)}
+print(d)
+
+
+
+
+
+
+5. Write a Python program to remove duplicates (values) from Dictionary
+dic1={"name1":"leelaah","name2":"kiran","name3":"surya","name4":"kumar","name5":"leelaah","name6":"kiran"}
+res={}
+for i,j in dic1.items():
+    if j not in res.values():
+        res.setdefault(i,j)
+print(res)
+
+
+
+
+6. Write a code to get the key of a minimum value from a dictionary
+dic1={"a":10,"b":3,"c":5,"d":6,"e":8}
+s=[]
+for i,k in dic1.items():
+    s.append(k)
+print(s)
+print(f"mininum value in the dictionary is: {min(s)}")
+
+
+
+
+
+
+
+7. Reverse a list in Python
+lst=[2,3,4,6,8]
+lst1=lst[::-1]
+print(lst1)
+
+
+8. Remove all occurrences of a specific item from a list.
+lst=[1,6,8,9,5]
+item=int(input("enter the number :"))
+def occurance(lst,item):
+    lst_org=[i for i in lst if i!=item]
+    return list(lst_org)
+    
+lst_final=occurance(lst,item)
+
+print(lst_final)
+    
+
+9. Write a Python program to sum all the items in a list
+lst=[2,6,8,9,5]
+cnt=0
+for i in lst:
+    cnt=cnt+i
+print(cnt)
+
+
+
+
+
+
+
+
+   
+
+10. Write a Python program to get the second largest number from a list
+
+
+lst=[8,3,4,10]
+lst.remove(max(lst))
+print(max(lst))
+
+
+
+
+11. Write a Python program to find the second smallest number in a lis
+
+
+lst=[8,3,4,10]
+lst.remove(min(lst))
+print(min(lst))
+
+
+
+12. Write a Python program to get unique values from a list.
+
+
+lst=[1,3,1,5,6,5,8,9]
+res=[]
+for i in lst:
+    if i not in res:
+        res.append(i)
+        
+print(f"result list:{res}")
+
+
+13. Write a Python program to get count of repetition of each value from a list.
+lst=[1,1,5,3,4,5,8,6,8,3,4,10]
+dict1 ={value:lst.count(value) for value in lst}
+res={}
+for i,j in dict1.items():
+    if i not in res:
+        res.setdefault(i,j)
+        
+print(res)
+
+
+
+
+14. Write a Python program to find common items from two lists.
+lst=[1,3,4,5,8]
+lst1=[5,9]
+
+
+cmn=set(lst).intersection(set(lst1))
+print(cmn)
+
+
+
+15. Write a Python program to count number of lists in a list of lists.
+
+lst=[[2,3,7],[8,4,0],[8,6,4]]
+count=0
+for i in lst:
+    type(i)==type([])
+    count+=1 
+print(count)

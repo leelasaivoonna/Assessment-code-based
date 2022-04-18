@@ -1,0 +1,95 @@
+decorates problems
+
+def drawborders(el1,el2,el3):
+    def pattern_fun(fun):
+        def inner_fun(*args):
+            print(el1 * 40)
+            fun(*args)
+            print(el2 * 40)
+        return inner_fun
+    return pattern_fun
+
+
+
+
+@drawborders('*','#',40)
+def greet(msg):
+    print("greet",msg)
+
+@drawborders('=','_',40)
+def RSVP(msg):
+    print("RSVP",msg)
+
+
+greet("welcome to python")
+RSVP("Have a good day")
+
+
+
+
+from datetime import datetime
+
+
+def logBeforeAfter(fun):
+    def helper(*args, **kwargs):
+        print()
+        print(f"log in before time:{datetime.now()}")
+        fun(*args , **kwargs)
+        print(f"log out time: {datetime.now()}")
+        print("-" * 40)
+
+    return helper
+
+
+@logBeforeAfter
+def fun(x, y):
+    print("fun", x, y)
+
+@logBeforeAfter
+def fun1(*args):
+    print("fun1", args)
+
+
+@logBeforeAfter
+def fun2(**kwargs):
+    print("fun2", kwargs)
+
+@logBeforeAfter
+def fun3(*args, **kwargs):
+    print("fun3", args, kwargs)
+
+fun(5, 6)
+fun1("happy", "python","java")
+fun2(first ='leelaah' , second="saiee")
+fun3(6, name= " leelaah")
+
+
+
+
+def nozero(fun):
+    def vishnavi(x,y):
+        if x==0 or y==0:
+            print("no operations with zero")
+        else:
+            print(fun(x,y))
+    return vishnavi
+
+@nozero
+def div(x,y):
+	return x/y
+
+@nozero
+def mul(x,y):
+	return x*y
+
+@nozero
+def add(x,y):
+	return x+y
+@nozero
+def sub(x,y):
+	return x-y
+
+div(9,5)
+mul(9,5)
+add(6,20)
+sub(56,45)

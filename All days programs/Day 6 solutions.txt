@@ -1,0 +1,46 @@
+2. open a directory (day06, use os module) and generate a report to print the following
+
+import os
+
+dir = os.getcwd()
+print(f"dir :{dir}")
+
+dir = "C:\Users\LEELA SAI\Downloads\Zensar02-master\Day06"
+os.chdir(dir)
+print(os.getcwd())
+print("-" * 40)
+
+files = os.listdir()
+# print(files)
+lst = []
+for file in files:
+    if file.endswith(".py"):
+        lst.append(file)
+
+FL = open("C:\\Users\\LEELA SAI\\Downloads\\Zensar02-master\\Day07\\report.txt", "w")
+for file in lst:
+    FL.write(file + " => " + str(os.path.getsize(file)) + "\n")
+FL.close()
+
+
+
+
+
+1. Write a code to accept data for a file until the choice of the user is 'NO'
+
+
+f = open("data.txt", "w")
+
+choice = "y"
+nt = ""
+while choice == "y":
+    st = input("enter the content of the file :")
+
+    nt = nt +" \n" + st
+
+    choice = input("dou you want to continue Yes / No ")
+
+f.write(nt)
+
+
+f.close()
