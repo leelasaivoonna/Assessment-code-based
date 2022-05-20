@@ -67,12 +67,12 @@ fun3(6, name= " leelaah")
 
 
 def nozero(fun):
-    def vishnavi(x,y):
+    def innner_fun(x,y):
         if x==0 or y==0:
             print("no operations with zero")
         else:
             print(fun(x,y))
-    return vishnavi
+    return inner_fun
 
 @nozero
 def div(x,y):
